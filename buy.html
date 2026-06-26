@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="buy.css">
+    <title>Properties to Buy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+    <link rel="stylesheet" href="buy.css">
+</head>
+<body>
+<header class="navbar">
+    <a href="index.html" class="logo">Logo</a>
+
+    <button class="menu-toggle" id="menuToggle">
+        ☰
+    </button>
+
+    <nav class="menu" id="menu">
+        <a href="buy.html" id="buy-link">Properties to Buy</a>
+        <a href="rent.html" id="rent-link">Properties to Rent</a>
+        <a href="about.html" id="about">About</a>
+        <a href="mailto:examplek@gmail.com" class="nav-cta" style="color:black;">Contact Us</a>
+    </nav>
+</header>
+
+
+<section class="filters">
+
+    <input
+        type="text"
+        id="keywordSearch"
+        placeholder="Search keyword..."
+    >
+
+    <select id="typeFilter">
+        <option value="">Type</option>
+        <option value="Apartment">Apartment</option>
+        <option value="House">House</option>
+        <option value="Building">Building</option>
+        <option value="Duplex">Duplex</option>
+        <option value="Triplex">Triplex</option>
+        <option value="Studio">Studio</option>
+    </select>
+
+    <select id="price">
+        <option value="">Price</option>
+        <option value="low">Low → High</option>
+        <option value="high">High → Low</option>
+    </select>
+
+    <select id="bedrooms">
+        <option value="">Bedrooms</option>
+        <option value="1">1+</option>
+        <option value="2">2+</option>
+        <option value="3">3+</option>
+        <option value="4">4+</option>
+        <option value="5">5+</option>
+    </select>
+
+    <button id="resetFilters" type="button">
+        Reset
+    </button>
+
+    <button id="toggleMap" class="map-toggle" type="button">
+        Hide Map
+    </button>
+
+</section>
+
+<div class="main-layout">
+
+    <div id="propertiesContainer" class="properties-container"></div>
+
+    <div id="map"></div>
+
+</div>
+
+<footer class="footer">
+
+    <div class="footer-top">
+
+        <div class="brand">
+            <h2>Logo</h2>
+            <p>
+                Luxury real estate curated for modern living.
+                Discover homes that match your vision, lifestyle,
+                and ambition.
+            </p>
+        </div>
+
+        <div class="col">
+            <h3>Navigation</h3>
+            <a href="index.html">Home</a>
+            <a href="buy.html">Properties to Buy</a>
+            <a href="rent.html">Properties to Rent</a>
+            <a href="about.html">About</a>
+        </div>
+
+        <div class="col">
+            <h3>Get in Touch</h3>
+            <p><img src="location.png">Your Location</p>
+            <p><img src="phone-call.png">Your phone number</p>
+            <p><img src="email.png">example@gmail.com</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Name. All rights reserved.</p>
+        <p>Developed By <a href="https://www.upwork.com/freelancers/~01a25f73c0f040ada4?mp_source=share">Wassim Berbache</a></p>
+    </div>
+
+</footer>
+
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script type="module" src="buy.js"></script>
+</body>
+</html>

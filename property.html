@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details</title>
+    <link rel="stylesheet" href="property.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">Logo</a>
+
+    <button class="menu-toggle" id="menuToggle">
+        ☰
+    </button>
+
+    <nav class="menu" id="menu">
+        <a href="buy.html" id="buy-link">Properties to Buy</a>
+        <a href="rent.html" id="rent-link">Properties to Rent</a>
+        <a href="about.html" id="about">About</a>
+        <a href="mailto:examplek@gmail.com" class="nav-cta" style="color:black;">Contact Us</a>
+    </nav>
+</header>
+
+<!-- JS will inject the property here -->
+<div class="property-page" id="property-page"></div>
+
+<div id="imageViewer" class="image-viewer">
+
+    <button class="close-btn" onclick="closeViewer()">✕</button>
+
+    <button class="nav-btn left" onclick="prevImage()">❮</button>
+
+    <img id="viewerImage">
+
+    <button class="nav-btn right" onclick="nextImage()"> ❯</button>
+
+</div>
+
+<footer class="footer">
+
+    <div class="footer-top">
+
+        <div class="brand">
+            <h2>Logo</h2>
+            <p>
+                Luxury real estate curated for modern living.
+                Discover homes that match your vision, lifestyle,
+                and ambition.
+            </p>
+        </div>
+
+        <div class="col">
+            <h3>Navigation</h3>
+            <a href="index.html">Home</a>
+            <a href="buy.html">Properties to Buy</a>
+            <a href="rent.html">Properties to Rent</a>
+            <a href="about.html">About</a>
+        </div>
+
+        <div class="col">
+            <h3>Get in Touch</h3>
+            <p><img src="location.png">Your Location</p>
+            <p><img src="phone-call.png">Your phone number</p>
+            <p><img src="email.png">example@gmail.com</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Name. All rights reserved.</p>
+        <p>Developed By <a href="https://www.upwork.com/freelancers/~01a25f73c0f040ada4?mp_source=share">Wassim Berbache</a></p>
+    </div>
+
+</footer>
+
+<script type="module" src="property.js"></script>
+
+</body>
+</html>

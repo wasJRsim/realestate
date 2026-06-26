@@ -1,0 +1,530 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f7f7f7;
+}
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:15px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(12px);
+    background:rgba(10,15,12,.5);
+    z-index:1000;
+}
+
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:700;
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#e5b769;
+}
+
+.nav-cta{
+    background:white;
+    padding:10px 18px;
+    border-radius:25px;
+    font-weight:600;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    color:white;
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+
+/* ---------- Tablet ---------- */
+
+@media(max-width:900px){
+
+    .navbar{
+        padding:15px 30px;
+    }
+
+    .menu{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:rgba(10,15,12,.97);
+        backdrop-filter:blur(15px);
+
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+
+        padding:25px 0;
+
+        display:none;
+    }
+
+    .menu.active{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+}
+
+/* ---------- Small Phones ---------- */
+
+@media(max-width:480px){
+
+    .navbar{
+        padding:15px 20px;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+
+    .menu a{
+        font-size:16px;
+    }
+
+    .nav-cta{
+        width:85%;
+        text-align:center;
+    }
+}
+/* TITLE */
+.title {
+    text-align: center;
+    font-size:clamp(2.2rem,5vw,3.5rem);
+    margin: 50px 0;
+    color: #222;
+}
+
+/* SECTION */
+.about {
+    width: 100%;
+    padding: 70px 10%;
+}
+.footer-bottom a {
+    color: #6f7a74;
+}
+
+.ptitle{
+    text-align: center;
+    font-family: "Inter",sans-serif;
+    color: #111;
+}
+/* ROW SYSTEM */
+.about-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 80px 0;
+    gap: 40px;
+}
+
+/* TEXT BOX */
+.text {
+    flex:1;
+}
+
+.text h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.text p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.box{
+    width:45%;
+    max-width:550px;
+    height: 300px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* LEFT / RIGHT EFFECT */
+.left .text { order: 1; }
+.left .box { order: 2; }
+
+.right .text { order: 2; }
+.right .box { order: 1; }
+
+/* TRUST SECTION */
+.trust {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 120px;
+    padding: 60px;
+    background: white;
+    border-radius: 20px;
+}
+
+.trust-card {
+    text-align: center;
+}
+
+.trust-card h3 {
+    font-size: 40px;
+    color: #e5b769;
+    margin: 0;
+}
+
+.trust-card p {
+    color: #444;
+}
+.footer {
+    background: #0A0F0C;
+    color: white;
+    padding: 80px 60px 30px 60px;
+    margin: 0 auto; 
+}
+/* TOP SECTION */
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* BRAND */
+.brand h2 {
+    font-size: 28px;
+    color: whitesmoke;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.brand p {
+    color: #b9c3bd;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+/* COLUMNS */
+.col h3 {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.col a {
+    display: block;
+    text-decoration: none;
+    color: #b9c3bd;
+    margin-bottom: 10px;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.col a:hover {
+    color:#e5b769;
+    transform: translateX(5px);
+}
+
+/* CONTACT TEXT */
+.col p {
+    color: #b9c3bd;
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap:5px;
+}
+.col img {
+    width: 18px;
+    height: 18px;
+}
+
+/* BOTTOM */
+.footer-bottom {
+    margin-top: 60px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 20px;
+    color: #6f7a74;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* ==========================
+   RESPONSIVE FOOTER
+========================== */
+
+/* Large tablets */
+@media (max-width:1100px){
+
+    .footer{
+        padding:70px 40px 30px;
+    }
+
+    .footer-top{
+        grid-template-columns:repeat(2,1fr);
+        gap:50px;
+    }
+
+}
+
+
+/* Tablets */
+@media (max-width:768px){
+
+    .footer{
+        padding:60px 25px 25px;
+    }
+
+    .footer-top{
+        grid-template-columns:1fr;
+        gap:40px;
+        text-align:center;
+    }
+
+    .brand p{
+        max-width:100%;
+        margin:auto;
+    }
+
+    .col a{
+        margin-bottom:12px;
+    }
+
+    .col p{
+        justify-content:center;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+        margin-top:40px;
+    }
+
+}
+
+
+/* Phones */
+@media (max-width:480px){
+
+    .footer{
+        padding:50px 18px 20px;
+    }
+
+    .brand h2{
+        font-size:24px;
+    }
+
+    .brand p,
+    .col a,
+    .col p{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+    .col h3{
+        font-size:15px;
+        margin-bottom:15px;
+    }
+
+    .footer-bottom{
+        font-size:12px;
+    }
+
+    .footer-bottom p{
+        line-height:1.6;
+    }
+
+}
+/* ===================================
+   RESPONSIVE ABOUT SECTION
+=================================== */
+
+/* Large tablets */
+@media (max-width:1100px){
+
+    .about{
+        padding:70px 6%;
+    }
+
+    .about-row{
+        gap:30px;
+    }
+
+    .text h2{
+        font-size:28px;
+    }
+
+    .text p{
+        font-size:17px;
+    }
+
+}
+
+
+/* Tablets */
+@media (max-width:900px){
+
+    .about-row{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        margin:60px 0;
+    }
+
+    /* Always place image above text */
+    .left .box,
+    .right .box{
+        order:1;
+    }
+
+    .left .text,
+    .right .text{
+        order:2;
+    }
+
+    .text,
+    .box{
+        width:100%;
+        max-width:700px;
+    }
+
+    .box{
+        height:380px;
+    }
+
+    .trust{
+        flex-wrap:wrap;
+        gap:30px;
+        padding:40px;
+        margin-top:80px;
+    }
+
+    .trust-card{
+        flex:1 1 220px;
+    }
+
+}
+
+
+/* Phones */
+@media (max-width:768px){
+
+    .about{
+        padding:60px 20px;
+    }
+
+    .title{
+        font-size:2.5rem;
+        margin-bottom:20px;
+    }
+
+    .ptitle{
+        font-size:1rem;
+        line-height:1.8;
+        max-width:650px;
+        margin:auto;
+    }
+
+    .text h2{
+        font-size:2rem;
+    }
+
+    .text p{
+        font-size:1rem;
+        line-height:1.8;
+    }
+
+    .box{
+        height:300px;
+    }
+
+    .trust{
+        flex-direction:column;
+        align-items:center;
+        gap:35px;
+    }
+
+}
+
+
+/* Small phones */
+@media (max-width:480px){
+
+    .about{
+        padding:50px 15px;
+    }
+
+    .title{
+        font-size:2rem;
+    }
+
+    .ptitle{
+        font-size:.95rem;
+    }
+
+    .about-row{
+        margin:45px 0;
+    }
+
+    .text h2{
+        font-size:1.7rem;
+    }
+
+    .text p{
+        font-size:.95rem;
+    }
+
+    .box{
+        height:220px;
+        border-radius:12px;
+    }
+
+    .trust{
+        padding:30px 20px;
+        border-radius:15px;
+    }
+
+    .trust-card h3{
+        font-size:2rem;
+    }
+
+    .trust-card p{
+        font-size:.95rem;
+    }
+
+}

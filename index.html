@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Name real estate</title>
+</head>
+<body>
+<header class="navbar">
+    <a href="index.html" class="logo">Logo</a>
+
+    <button class="menu-toggle" id="menuToggle">
+        ☰
+    </button>
+
+    <nav class="menu" id="menu">
+        <a href="buy.html" id="buy-link">Properties to Buy</a>
+        <a href="rent.html" id="rent-link">Properties to Rent</a>
+        <a href="about.html" id="about">About</a>
+        <a href="mailto:examplek@gmail.com" class="nav-cta" style="color:black;">Contact Us</a>
+    </nav>
+</header>
+
+<section class="hero">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+        <h1>
+            Find your home,<br>
+            Build your <span>vision</span> with Name
+        </h1>
+
+        <p>
+            Discover outstanding real estate opportunities tailored to your needs, from elegant residences to strategic investment properties, all supported by professional guidance, market knowledge, and a commitment to turning your vision into reality.
+        </p>
+
+        <div class="buttons">
+            <a href="#nosbiens" class="primary">Our Properties</a>
+            <a href="#map-section" class="secondary">Where We Are</a>
+        </div>
+
+        <!-- Social Proof -->
+        <div class="avatars">
+            <div class="imgs">
+                <img src="https://i.pravatar.cc/40?img=1">
+                <img src="https://i.pravatar.cc/40?img=2">
+                <img src="https://i.pravatar.cc/40?img=5">
+            </div>
+            <span>Trusted by 500+ clients</span>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+
+        <svg class="big-number"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 103 103"
+            width="64"
+            height="64"
+            fill="none"
+            stroke="currentColor"
+            style="color:rgba(10, 15, 12, 0.832);"
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+
+            <!-- Roof -->
+            <path d="M20 52 L51.5 25 L83 52" />
+
+            <!-- House body -->
+            <path d="M28 52 V80 H75 V52" />
+
+            <!-- Door -->
+            <path d="M46 80 V62 H57 V80" />
+
+        </svg>
+        <div class="badge location"><img class="search-icon" src="https://res.cloudinary.com/dshmhktwh/image/upload/v1782040933/search_3_zmhqtt.png">
+              the best real estate agency in the city</div>
+    </div>
+
+</section>
+ 
+    <div class="nosbiens" id="nosbiens">
+      <div class="properties-heading">
+
+    <span class="properties-label">
+        PROPERTY LISTINGS
+    </span>
+
+    <h2 class="properties-title">
+        Browse Available Spaces
+    </h2>
+
+    <p class="properties-description">
+       A structured overview of properties from different agencies and locations, organized to help users explore a wide range of listings with clarity, consistency, and ease of navigation.
+    </p>
+
+</div>
+        <div class="cards-container" id="cards-container"></div>
+        <button class="see-more-btn" id="seeMoreBtn">
+            See More Properties
+        </button>
+    </div>
+    <section class="testimonials-section"  id="testimonials-section">
+
+    <div class="testimonials-header">
+        <h2>Trusted by Clients</h2>
+
+        <div class="trustpilot-rating">
+            <span class="score">4.5/5</span>
+
+            <span class="star">★</span>
+
+            <span class="trustpilot">Trustpilot</span>
+
+            <span class="reviews-count">
+                Based on 387 reviews
+            </span>
+        </div>
+    </div>
+
+    <div class="testimonials-layout">
+
+        <!-- LEFT COLUMN -->
+        <aside class="testimonials-sidebar">
+
+            <div class="quote-icon">“</div>
+
+            <h3>
+                What our customers are saying
+            </h3>
+
+            <div class="slider-controls">
+
+                <button class="nav-btn" id="prevBtn">←</button>
+
+                <div class="progress-track">
+                    <div class="progress-fill"></div>
+                </div>
+
+                <button class="nav-btn" id="nextBtn">→</button>
+
+            </div>
+
+        </aside>
+
+        <!-- RIGHT COLUMN -->
+        <div class="testimonials-wrapper">
+
+            <!-- CARD -->
+            <article class="testimonial-item">
+
+                <div class="testimonial-card">
+
+                    <p>
+                        “Smooth and professional experience. I found my apartment in less than a week, and the process was very clear from start to finish.”
+
+                    </p>
+
+                </div>
+
+                <div class="user-info">
+
+                    <img src="https://i.pravatar.cc/100?img=5" alt="User">
+
+                    <div>
+                        <h4>Sarah M., Client</h4>
+                        <div class="stars">
+                        ★★★★★
+                        </div>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- CARD -->
+            <article class="testimonial-item">
+
+                <div class="testimonial-card">
+
+                    <p>
+                    “The platform is very easy to use. I could browse properties, check locations on the map, and contact the agent instantly.”
+                    </p>
+
+                </div>
+
+                <div class="user-info">
+
+                    <img src="https://i.pravatar.cc/100?img=1" alt="User">
+
+                    <div>
+                        <h4>Yacine B., Buyer</h4>
+                        <div class="stars">
+                        ★★★★★
+                        </div>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- CARD -->
+            <article class="testimonial-item">
+
+                <div class="testimonial-card">
+
+                    <p>
+                    “Excellent service and very responsive support. They helped me sell my house faster than I expected.”
+                    </p>
+
+                </div>
+
+                <div class="user-info">
+
+                    <img src="https://i.pravatar.cc/100?img=2" alt="User">
+
+                    <div>
+                        <h4>Amira K., Property Owner</h4>
+                        <div class="stars">
+                        ★★★★★
+                        </div>
+                    </div>
+
+                </div>
+
+            </article>
+             <article class="testimonial-item">
+
+                <div class="testimonial-card">
+
+                    <p>
+                    “A modern and trustworthy real estate platform. It made finding a home much less stressful.”
+                    </p>
+
+                </div>
+
+                <div class="user-info">
+
+                    <img src="https://i.pravatar.cc/100?img=16" alt="User">
+
+                    <div>
+                        <h4>Lina H., Client</h4>
+                        <div class="stars">
+                        ★★★★★
+                        </div>
+                    </div>
+
+                </div>
+
+            </article>
+             <article class="testimonial-item">
+
+                <div class="testimonial-card">
+
+                    <p>
+                  “I liked how detailed the listings are. Photos, price, and location were all accurate and helpful.”
+                    </p>
+
+                </div>
+
+                <div class="user-info">
+
+                    <img src="https://i.pravatar.cc/100?img=4" alt="User">
+
+                    <div>
+                        <h4>Daniel R., Investor</h4>
+                        <div class="stars">
+                        ★★★★★
+                        </div>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+  <section class="map-section" id="map-section">
+    <h2>Our Location</h2>
+
+        <iframe
+            src="https://maps.google.com/maps?q=41.822576745229384,-87.86534449577182&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+    </section>
+    
+<footer class="footer">
+
+    <div class="footer-top">
+
+        <!-- BRAND -->
+        <div class="brand">
+            <h2>Logo</h2>
+            <p>
+                Luxury homes. Prime locations. Extraordinary living. Find the perfect property to match your lifestyle and aspirations.
+            </p>
+        </div>
+
+        <!-- NAV -->
+        <div class="col">
+            <h3>Navigation</h3>
+            <a href="#">Home</a>
+            <a href="buy.html">Properties to Buy</a>
+            <a href="rent.html">Properties to Rent</a>
+            <a href="about.html">About</a>
+        </div>
+
+        <!-- SERVICES -->
+        <div class="col">
+            <h3>Sections</h3>
+            <a href="#nosbiens">Our Properties</a>
+            <a href="#testimonials-section">What are saying</a>
+            <a href="#map-section">Our location</a>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="col">
+            <h3>Get in Touch</h3>
+            <p><img src="location.png">Your Location</p>
+            <p><img src="phone-call.png">Your phone number</p>
+            <p><img src="email.png"> example@gmail.com</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Name. All rights reserved.</p>
+         <p>Developed By <a href="https://www.upwork.com/freelancers/~01a25f73c0f040ada4?mp_source=share">Wassim Berbache</a></p>
+    </div>
+
+</footer>
+
+</section>
+<script type="module" src="index.js"></script>
+</body>
+</html>

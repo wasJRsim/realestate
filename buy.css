@@ -1,0 +1,699 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+html,
+body {
+    scroll-behavior: smooth;
+    height: 100%;
+    margin: 0;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding:15vh 0vh 5vh 0vh;
+    color:#1e293b;
+    background: whitesmoke;
+}
+
+main {
+    flex: 1;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:15px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(12px);
+    background:rgba(10,15,12,.5);
+    z-index:1000;
+}
+
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:700;
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#e5b769;
+}
+
+.nav-cta{
+    background:white;
+    padding:10px 18px;
+    border-radius:25px;
+    font-weight:600;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    color:white;
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+
+/* ---------- Tablet ---------- */
+
+@media(max-width:900px){
+
+    .navbar{
+        padding:15px 30px;
+    }
+
+    .menu{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:rgba(10,15,12,.97);
+        backdrop-filter:blur(15px);
+
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+
+        padding:25px 0;
+
+        display:none;
+    }
+
+    .menu.active{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+}
+
+/* ---------- Small Phones ---------- */
+
+@media(max-width:480px){
+
+    .navbar{
+        padding:15px 20px;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+
+    .menu a{
+        font-size:16px;
+    }
+
+    .nav-cta{
+        width:85%;
+        text-align:center;
+    }
+}
+
+
+/* ================= FILTERS ================= */
+
+.filters{
+    width:95%;
+    margin:auto;
+    display:flex;
+    gap:15px;
+    padding:20px 0;
+    flex-wrap:wrap;
+}
+
+.filters input,
+.filters select{
+    padding:12px 16px;
+    border:none;
+    border-radius:12px;
+    background:white;
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+    cursor: pointer;
+}
+
+/* ================= LAYOUT ================= */
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 95%;
+    margin: auto;
+    align-items: start;
+}
+
+.map-hidden .main-layout{
+    grid-template-columns:1fr;
+}
+.map-hidden #map{
+    display:none;
+}
+/* ================= PROPERTIES ================= */
+
+.properties-container{
+    overflow-y:auto;
+    scrollbar-width:none;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    padding-right:10px;
+    height: auto;
+}
+
+/* GRID MODE (map hidden) */
+.map-hidden .properties-container{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+}
+.map-hidden .property-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+/* RESPONSIVE GRID */
+@media (max-width:1100px){
+    .map-hidden .properties-container{
+        grid-template-columns:repeat(2, 1fr);
+    }
+}
+
+@media (max-width:700px){
+    .map-hidden .properties-container{
+        grid-template-columns:1fr;
+    }
+}
+
+/* ================= PROPERTY CARD ================= */
+
+.property-card{
+    position:relative;
+    background: #1f2937;
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+    border-radius: 18px 18px 0 0;
+    overflow:hidden;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.property-card:hover{
+    transform:translateY(-5px) scale(1.01);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+/* IMAGE */
+.property-card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+/* INFO */
+.property-info{
+    padding:18px;
+    color: white;
+}
+.property-info-top{
+    display:flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+.property-price{
+    margin-top: 5px;
+    color: #e5b769;
+    display:flex;
+    align-items: center;
+    gap:7px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-weight:bold;
+    font-family: "Montserrat",sans-serif;
+}
+
+.property-location{
+    margin-top:8px;
+    font-size: 1rem;
+    color: #9ca3af;
+    opacity:0.9;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:7px;
+}
+
+/* DETAILS BUTTON */
+.details-btn{
+    position:absolute;
+    bottom:15px;
+    right:15px;
+    background:#2563eb;
+    color:white;
+    padding:8px 12px;
+    border-radius:999px;
+    font-size:12px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.details-btn:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+#resetFilters{
+    padding:12px 16px;
+    border:none;
+    border-radius:12px;
+    background:white;
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+    cursor: pointer;
+}
+
+/* ================= MAP ================= */
+
+#map{
+    position: sticky;
+    top: 90px;
+    width: 100%;
+    height: 80vh;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+
+/* ================= MAP TOGGLE ================= */
+
+.map-toggle{
+    background: #7CFF9A;
+    color:black;
+    border:none;
+    padding:10px 14px;
+    border-radius:999px;
+    margin-left: auto;
+    cursor:pointer;
+    font-size:14px;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+/* ================= PRICE MARKER ================= */
+
+.price-marker{
+    background:white;
+    border-radius:999px;
+    padding:8px 14px;
+    font-weight:700;
+    border:2px solid #2563eb;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+.property-meta{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:12px;
+}
+
+.meta-item{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:white;
+    font-size:20px;
+}
+.no-results{
+    color:white;
+    margin-top: 15vh;
+}
+
+/* ================= MAP SIZE FIX ================= */
+
+@media(max-width:900px){
+    .main-layout{
+        grid-template-columns:1fr;
+    }
+
+    #map{
+        height:450px;
+        order:-1;
+    }
+}
+
+
+.footer {
+    background: #0A0F0C;
+    color: white;
+    padding: 80px 60px 30px 60px;
+    margin-top: 9vh;
+}
+/* TOP SECTION */
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* BRAND */
+.brand h2 {
+    font-size: 28px;
+    color: whitesmoke;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.brand p {
+    color: #b9c3bd;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+/* COLUMNS */
+.col h3 {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.col a {
+    display: block;
+    text-decoration: none;
+    color: #b9c3bd;
+    margin-bottom: 10px;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.col a:hover {
+    color:#e5b769;
+    transform: translateX(5px);
+}
+
+/* CONTACT TEXT */
+.col p {
+    color: #b9c3bd;
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap:5px;
+}
+.col img{
+    width:auto;
+    height: 3vh;
+}
+
+/* BOTTOM */
+.footer-bottom {
+    margin-top: 60px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 20px;
+    color: #6f7a74;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-bottom a {
+    color: #6f7a74;
+}
+/* ==========================
+   RESPONSIVE FOOTER
+========================== */
+
+/* Large tablets */
+@media (max-width:1100px){
+
+    .footer{
+        padding:70px 40px 30px;
+    }
+
+    .footer-top{
+        grid-template-columns:repeat(2,1fr);
+        gap:50px;
+    }
+
+}
+
+
+/* Tablets */
+@media (max-width:768px){
+
+    .footer{
+        padding:60px 25px 25px;
+    }
+
+    .footer-top{
+        grid-template-columns:1fr;
+        gap:40px;
+        text-align:center;
+    }
+
+    .brand p{
+        max-width:100%;
+        margin:auto;
+    }
+
+    .col a{
+        margin-bottom:12px;
+    }
+
+    .col p{
+        justify-content:center;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+        margin-top:40px;
+    }
+
+}
+
+
+/* Phones */
+@media (max-width:480px){
+
+    .footer{
+        padding:50px 18px 20px;
+    }
+
+    .brand h2{
+        font-size:24px;
+    }
+
+    .brand p,
+    .col a,
+    .col p{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+    .col h3{
+        font-size:15px;
+        margin-bottom:15px;
+    }
+
+    .footer-bottom{
+        font-size:12px;
+    }
+
+    .footer-bottom p{
+        line-height:1.6;
+    }
+
+}
+/* ===================================
+   RESPONSIVE FILTERS & LAYOUT
+=================================== */
+
+/* Large tablets */
+@media (max-width:1200px){
+
+    .map-hidden .properties-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+/* Tablets */
+@media (max-width:992px){
+
+    .filters{
+        width:100%;
+        padding:20px;
+        gap:12px;
+    }
+
+    .filters input,
+    .filters select,
+    #resetFilters{
+        flex:1 1 220px;
+    }
+
+    .map-toggle{
+        margin-left:0;
+        flex:1 1 220px;
+    }
+
+    .main-layout{
+        grid-template-columns:1fr;
+    }
+
+    #map{
+        position:relative;
+        top:0;
+        height:400px;
+        order:-1;
+    }
+
+    .properties-container{
+        padding-right:0;
+    }
+
+    .map-hidden .properties-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+/* Phones */
+@media (max-width:768px){
+
+    .filters{
+        padding:15px;
+        gap:10px;
+    }
+
+    .filters input,
+    .filters select,
+    #resetFilters,
+    .map-toggle{
+        width:100%;
+        flex:none;
+    }
+
+    .main-layout{
+        width:100%;
+        padding:0 15px;
+    }
+
+    #map{
+        height:320px;
+        border-radius:15px;
+    }
+
+    .map-hidden .properties-container{
+        grid-template-columns:1fr;
+    }
+
+    .property-card img{
+        height:240px;
+    }
+
+    .property-info{
+        padding:16px;
+    }
+
+    .property-price{
+        font-size:1.3rem;
+    }
+
+    .property-location{
+        font-size:.95rem;
+    }
+
+    .meta-item{
+        font-size:16px;
+    }
+
+}
+
+
+/* Small phones */
+@media (max-width:480px){
+
+    .filters{
+        padding:12px;
+    }
+
+    .filters input,
+    .filters select,
+    #resetFilters,
+    .map-toggle{
+        padding:14px;
+        font-size:15px;
+    }
+
+    .main-layout{
+        padding:0 12px;
+    }
+
+    #map{
+        height:260px;
+    }
+
+    .property-card{
+        border-radius:15px;
+    }
+
+    .property-card img{
+        height:200px;
+    }
+
+    .property-info-top{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:6px;
+    }
+
+    .property-price{
+        font-size:1.2rem;
+    }
+
+    .property-location{
+        font-size:.9rem;
+    }
+
+    .property-meta{
+        flex-wrap:wrap;
+        gap:12px;
+    }
+
+    .details-btn{
+        position:static;
+        display:inline-block;
+        margin-top:15px;
+    }
+
+}

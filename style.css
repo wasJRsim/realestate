@@ -1,0 +1,1506 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:15px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(12px);
+    background:rgba(10,15,12,.5);
+    z-index:1000;
+}
+
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:700;
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#e5b769;
+}
+
+.nav-cta{
+    background:white;
+    padding:10px 18px;
+    border-radius:25px;
+    font-weight:600;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    color:white;
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+
+/* ---------- Tablet ---------- */
+
+@media(max-width:900px){
+
+    .navbar{
+        padding:15px 30px;
+    }
+
+    .menu{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:rgba(10,15,12,.97);
+        backdrop-filter:blur(15px);
+
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+
+        padding:25px 0;
+
+        display:none;
+    }
+
+    .menu.active{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+}
+
+/* ---------- Small Phones ---------- */
+
+@media(max-width:480px){
+
+    .navbar{
+        padding:15px 20px;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+
+    .menu a{
+        font-size:16px;
+    }
+
+    .nav-cta{
+        width:85%;
+        text-align:center;
+    }
+}
+
+/* HERO LAYOUT */
+.hero {
+    display: flex;
+    min-height:100vh;
+}
+
+/* LEFT SIDE */
+.left {
+    flex: 1;
+    background: #0B3C26;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    padding-top: 30px;
+}
+
+.left h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 10vh;
+    font-family: "Stack Sans Text", sans-serif;
+}
+
+.left h1 span {
+    color: #7CFF9A;
+    font-family: "Imperial Script",sans-serif;
+    font-size: 66px;
+}
+
+.left p {
+    margin-top: 20px;
+    color: #cfd9d3;
+    font-family: "Inter", sans-serif;
+}
+
+/* BUTTONS */
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.primary {
+    background: #7CFF9A;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.secondary {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-weight: 350;
+    cursor: pointer;
+}
+
+/* AVATARS */
+.avatars {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #cfd9d3;
+    font-size: 14px;
+}
+
+.avatars img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: -10px;
+    border: 2px solid #0B3C26;
+}
+
+/* RIGHT SIDE */
+.right {
+    flex: 1;
+    background: url("https://res.cloudinary.com/dshmhktwh/image/upload/v1782458642/67d5b3611e424_cj6sek.jpg")
+        center/cover no-repeat;
+
+    position: relative;
+}
+
+/* DARK OVERLAY */
+.right::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to left, rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+}
+
+/* BIG NUMBER */
+.big-number {
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    width:auto;
+    height: 35vh;
+}
+
+/* BADGES */
+.badge {
+    position: absolute;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    backdrop-filter: blur(10px);
+    color:rgba(183, 188, 185, 0.832);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.feature {
+    top: 30px;
+    right: 30px;
+    background: rgba(0,0,0,0.4);
+}
+
+.location {
+    bottom: 60px;
+    left: 50%;
+    background: rgba(10, 15, 12, 0.5);
+    backdrop-filter: blur(12px);
+}
+.search-icon{
+    height: 3vh;
+    width: auto;
+     transform: scaleX(-1);
+}
+.nosbiens{
+    padding: 10vh 0vh;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color:white;
+}
+h2{
+    color: black;
+    display:inline-block;
+    font-family: "poppins",sans-serif;
+    font-weight: 600;
+    font-size:clamp(2rem,5vw,3.2rem);
+    padding: 20px;
+}
+.cards-container{
+    width:100%;
+    max-width:1400px;
+    margin:0 auto;
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.pcard{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height:100vh;
+    gap:20px;
+}
+
+.property-card{
+    width:100%;
+    height:550px;
+
+    border-radius:18px;
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    padding:20px;
+
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+
+    position:relative;
+    cursor:pointer;
+
+    transition:.35s;
+}
+
+.plocation{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family: "Inter",sans-serif;
+
+}
+
+.namelocation{
+    color:white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: "Montserrat",sans-serif;
+}
+
+.price{
+    margin-left:auto;
+    color: #e5b769;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-weight:bold;
+    font-family: "Montserrat",sans-serif;
+}
+
+.icons{
+    display:flex;
+    align-items:center;
+    color:white;
+    gap:5px;
+    padding: 0px 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: "Inter",sans-serif;
+}
+
+.location2{
+    height: 5vh;
+    width:5vh;
+}
+.icon{
+    height:6vh;
+    width:6vh;
+    object-fit:contain;
+}
+.plocation,
+.icons {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease;
+}
+
+.property-card:hover .plocation,
+.property-card:hover .icons {
+    opacity: 0;
+    visibility: hidden;
+}
+.property-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0)
+    );
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+.property-card:hover::before {
+    opacity: 0;
+     transform: scale(1.1);
+}
+.property-card * {
+    position: relative;
+    z-index: 2;
+}
+.map-section{
+    padding:100px 5%;
+    background:#fff;
+    text-align:center;
+}
+
+.map-section h2{
+    font-family:"Poppins",sans-serif;
+    font-size:clamp(2rem,5vw,3.5rem);
+    font-weight:700;
+    color:#111;
+    margin-bottom:40px;
+}
+
+.map-section iframe{
+    width:100%;
+    height:500px;
+
+    border:0;
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+    display:block;
+}
+.footer {
+    background: #0A0F0C;
+    color: white;
+    padding: 80px 60px 30px 60px;
+    margin: 0 auto; 
+}
+/* TOP SECTION */
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* BRAND */
+.brand h2 {
+    font-size: 28px;
+    color: whitesmoke;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.brand p {
+    color: #b9c3bd;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+/* COLUMNS */
+.col h3 {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.col a {
+    display: block;
+    text-decoration: none;
+    color: #b9c3bd;
+    margin-bottom: 10px;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.col a:hover {
+    color:#e5b769;
+    transform: translateX(5px);
+}
+
+/* CONTACT TEXT */
+.col p {
+    color: #b9c3bd;
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap:5px;
+}
+.col img {
+    width: 18px;
+    height: 18px;
+}
+
+/* BOTTOM */
+.footer-bottom {
+    margin-top: 60px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 20px;
+    color: #6f7a74;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom a {
+    color: #6f7a74;
+}
+
+
+.property-detail {
+    width: 70%;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.hero-image {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.details {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+/* ==========================
+   TESTIMONIALS SECTION
+========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.testimonials-section{
+    width:100%;
+    background: linear-gradient(135deg, #f8f9fb, #e7eaf0);
+    padding:120px 8%;
+    font-family:'Inter',sans-serif;
+    overflow:hidden;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.testimonials-header{
+    text-align:center;
+    margin-bottom:80px;
+}
+
+.testimonials-header h2{
+    font-size:clamp(2.5rem,5vw,4rem);
+    color:#0D0D0D;
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+.trustpilot-rating{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.score{
+    font-weight:700;
+    color:#0D0D0D;
+}
+
+.star{
+    color:#00B67A;
+    font-size:1.1rem;
+}
+
+.trustpilot{
+    font-weight:700;
+    color:#0D0D0D;
+}
+
+.reviews-count{
+    color:#666666;
+    font-size:.95rem;
+}
+
+/* ==========================
+   MAIN LAYOUT
+========================== */
+
+.testimonials-layout{
+    display:grid;
+    grid-template-columns:300px 1fr;
+    gap:70px;
+    align-items:flex-start;
+}
+
+/* ==========================
+   LEFT SIDE
+========================== */
+
+.testimonials-sidebar{
+    position:sticky;
+    top:40px;
+}
+
+.quote-icon{
+    font-size:8rem;
+    line-height:1;
+    color:#D7D7D7;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.testimonials-sidebar h3{
+    font-size:2rem;
+    color:#0D0D0D;
+    line-height:1.3;
+    margin-bottom:40px;
+}
+
+.slider-controls{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.nav-btn{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:white;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    cursor:pointer;
+    font-size:1rem;
+    transition:.3s;
+}
+
+.nav-btn:hover{
+    transform:translateY(-2px);
+}
+
+.progress-track{
+    width:140px;
+    height:4px;
+    background:#E5E5E5;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:0%;
+    height:100%;
+    background:#0D0D0D;
+}
+
+/* ==========================
+   CARDS AREA
+========================== */
+
+.testimonials-wrapper{
+    display:flex;
+    gap:5px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    padding-bottom:20px;
+}
+
+.testimonials-wrapper::-webkit-scrollbar{
+    display:none;
+}
+
+.testimonial-item{
+    flex:0 0 380px;
+}
+
+/* ==========================
+   SPEECH BUBBLE
+========================== */
+
+.testimonial-card{
+    position:relative;
+    background:#fff;
+
+    width:100%;
+    min-height:340px;
+
+    padding:35px;
+    border-radius:18px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.05),
+        0 2px 10px rgba(0,0,0,.03);
+}
+
+.testimonial-card::after{
+    content:"";
+    position:absolute;
+    left:35px;
+    bottom:-12px;
+
+    width:24px;
+    height:24px;
+
+    background:white;
+
+    transform:rotate(45deg);
+
+    box-shadow:
+    8px 8px 18px rgba(0,0,0,.03);
+}
+
+.testimonial-card p{
+    color:#303030;
+    line-height:1.9;
+    font-size:1rem;
+    margin-bottom:30px;
+}
+
+.stars{
+    color:#00B67A;
+    font-size:1rem;
+    letter-spacing:2px;
+}
+
+/* ==========================
+   USER INFO
+========================== */
+
+.user-info{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-top:28px;
+    margin-left:18px;
+}
+
+.user-info img{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.user-info h4{
+    margin:0;
+    color:#0D0D0D;
+    font-size:1rem;
+    font-weight:700;
+}
+
+.user-info span{
+    color:#666666;
+    font-size:.9rem;
+}
+
+.estate-showcase{
+    width:100%;
+    padding:120px 5%;
+    background:#ffffff;
+}
+
+.estate-header{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.estate-tag{
+    color:#c9a76d;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:.9rem;
+}
+
+.estate-header h2{
+    font-family:"Poppins",sans-serif;
+    font-size:4rem;
+    margin-top:15px;
+    color:#111;
+}
+
+.estate-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(350px,1fr));
+
+    gap:28px;
+}
+
+.estate-tile{
+    position:relative;
+    height:420px;
+    border-radius:24px;
+    overflow:hidden;
+    cursor:pointer;
+
+    background-size:cover;
+    background-position:center;
+
+    transition:.5s;
+}
+
+.estate-tile:hover{
+    transform:translateY(-8px);
+}
+
+.estate-tile::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    to top,
+    rgba(0,0,0,.9),
+    rgba(0,0,0,.15)
+    );
+}
+
+.estate-tile:hover::before{
+    background:
+    linear-gradient(
+    to top,
+    rgba(0,0,0,.75),
+    rgba(0,0,0,0)
+    );
+}
+
+.estate-content{
+    position:absolute;
+    bottom:25px;
+    left:25px;
+    right:25px;
+    z-index:2;
+}
+
+.estate-price{
+    color:#e5b769;
+    font-size:2rem;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.estate-city{
+    color:white;
+    font-size:1.4rem;
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+.estate-meta{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.estate-badge{
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    padding:10px 15px;
+
+    border-radius:999px;
+
+    font-size:.9rem;
+}
+.properties-heading{
+    text-align:center;
+    margin-bottom:70px;
+    max-width:800px;
+}
+
+.properties-label{
+    display:block;
+    color:#c8a76d;
+    font-family:"Montserrat",sans-serif;
+    font-size:.9rem;
+    font-weight:600;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.properties-title{
+    font-family:"Poppins",sans-serif;
+    font-size:clamp(3rem,5vw,5rem);
+    font-weight:700;
+    color:#111;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.properties-description{
+    color:#777;
+    font-size:1.1rem;
+    line-height:1.8;
+    max-width:650px;
+    margin:auto;
+}
+.cards-container .property-card:nth-child(n+7){
+    display:none;
+}
+.see-more-btn{
+    display:block;
+    margin:40px auto 0 auto;
+    padding:14px 30px;
+    border:none;
+    border-radius:999px;
+    background:#111;
+    color:white;
+    font-family:"Poppins",sans-serif;
+    font-size:1rem;
+    font-weight:500;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+.see-more-btn:hover{
+    background:#e5b769;
+    color:#111;
+    transform:translateY(-1px);
+}
+
+/* ==========================
+   RESPONSIVE HERO
+========================== */
+
+/* Large tablets */
+@media (max-width: 1200px) {
+
+    .left{
+        padding:60px;
+    }
+
+    .left h1{
+        font-size:42px;
+    }
+
+    .left h1 span{
+        font-size:58px;
+    }
+
+    .big-number{
+        height:28vh;
+    }
+}
+
+
+/* Tablets */
+@media (max-width:992px){
+
+    .hero{
+        flex-direction:column;
+        height:auto;
+        min-height:100vh;
+    }
+
+    .left,
+    .right{
+        width:100%;
+        flex:none;
+    }
+
+    .left{
+        padding:120px 40px 70px;
+        text-align:center;
+        align-items:center;
+    }
+
+    .left h1{
+        margin-top:0;
+        font-size:40px;
+    }
+
+    .left h1 span{
+        font-size:54px;
+    }
+
+    .left p{
+        max-width:650px;
+    }
+
+    .buttons{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .avatars{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .right{
+        height:500px;
+    }
+
+    .big-number{
+        left:50%;
+        top:45%;
+        transform:translate(-50%,-50%);
+        height:180px;
+    }
+
+    .location{
+        left:50%;
+        transform:translateX(-50%);
+        bottom:25px;
+        width:90%;
+        max-width:420px;
+        justify-content:center;
+        text-align:center;
+    }
+
+}
+
+
+/* Phones */
+@media (max-width:768px){
+
+    .left{
+        padding:110px 25px 60px;
+    }
+
+    .left h1{
+        font-size:34px;
+        line-height:1.2;
+    }
+
+    .left h1 span{
+        font-size:46px;
+    }
+
+    .left p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    .buttons{
+        width:100%;
+        flex-direction:column;
+    }
+
+    .primary,
+    .secondary{
+        width:100%;
+        text-align:center;
+    }
+
+    .right{
+        height:420px;
+    }
+
+    .big-number{
+        height:140px;
+    }
+
+    .badge{
+        font-size:13px;
+        padding:10px 15px;
+    }
+
+    .search-icon{
+        height:20px;
+    }
+
+}
+
+
+/* Small phones */
+@media (max-width:480px){
+
+    .left{
+        padding:100px 18px 50px;
+    }
+
+    .left h1{
+        font-size:28px;
+    }
+
+    .left h1 span{
+        font-size:38px;
+    }
+
+    .left p{
+        font-size:14px;
+    }
+
+    .avatars{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+    }
+
+    .avatars img{
+        width:32px;
+        height:32px;
+    }
+
+    .right{
+        height:340px;
+    }
+
+    .big-number{
+        height:110px;
+    }
+
+    .location{
+        width:92%;
+        font-size:12px;
+    }
+
+}
+/* ==========================
+   Large Tablets
+========================== */
+
+@media (max-width:1100px){
+
+    .cards-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .property-card{
+        height:500px;
+    }
+
+}
+
+
+/* ==========================
+   Tablets
+========================== */
+
+@media (max-width:768px){
+
+    .nosbiens{
+        padding:80px 20px;
+    }
+
+    .properties-heading{
+        margin-bottom:50px;
+    }
+
+    .properties-title{
+        font-size:2.3rem;
+    }
+
+    .properties-description{
+        font-size:1rem;
+    }
+
+    .cards-container{
+        grid-template-columns:1fr;
+        padding:0;
+    }
+
+    .property-card{
+        height:450px;
+    }
+
+}
+
+
+/* ==========================
+   Phones
+========================== */
+
+@media (max-width:480px){
+
+    .nosbiens{
+        padding:70px 15px;
+    }
+
+    .properties-title{
+        font-size:2rem;
+    }
+
+    .properties-description{
+        font-size:.95rem;
+        line-height:1.7;
+    }
+
+    .property-card{
+        height:380px;
+        border-radius:15px;
+        padding:18px;
+    }
+
+    .namelocation{
+        font-size:1rem;
+    }
+
+    .price{
+        font-size:1.2rem;
+    }
+
+    .icons{
+        font-size:.9rem;
+        gap:4px;
+    }
+
+    .location2{
+        width:26px;
+        height:26px;
+    }
+
+    .icon{
+        width:28px;
+        height:28px;
+    }
+
+    .see-more-btn{
+        width:100%;
+        max-width:300px;
+    }
+
+}
+/* ==========================
+   RESPONSIVE
+========================== */
+
+/* Large tablets */
+@media (max-width:1200px){
+
+    .testimonials-layout{
+        grid-template-columns:260px 1fr;
+        gap:40px;
+    }
+
+    .testimonial-item{
+        flex:0 0 340px;
+    }
+
+}
+
+
+/* Tablets */
+@media (max-width:992px){
+
+    .testimonials-section{
+        padding:90px 30px;
+    }
+
+    .testimonials-layout{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+
+    .testimonials-sidebar{
+        position:static;
+        text-align:center;
+    }
+
+    .slider-controls{
+        justify-content:center;
+    }
+
+    .quote-icon{
+        font-size:6rem;
+    }
+
+    .testimonials-sidebar h3{
+        font-size:1.8rem;
+    }
+
+}
+
+
+/* Phones */
+@media (max-width:768px){
+
+    .testimonials-section{
+        padding:70px 20px;
+    }
+
+    .testimonials-header{
+        margin-bottom:50px;
+    }
+
+    .testimonials-header h2{
+        font-size:2.2rem;
+    }
+
+    .testimonial-item{
+        flex:0 0 300px;
+    }
+
+    .testimonial-card{
+        padding:25px;
+        min-height:280px;
+    }
+
+    .testimonial-card p{
+        font-size:.95rem;
+        line-height:1.7;
+    }
+
+    .user-info{
+        margin-left:10px;
+    }
+
+    .user-info img{
+        width:50px;
+        height:50px;
+    }
+
+}
+
+
+/* Small phones */
+@media (max-width:480px){
+
+    .testimonials-section{
+        padding:60px 15px;
+    }
+
+    .testimonials-header h2{
+        font-size:1.9rem;
+    }
+
+    .testimonial-item{
+        flex:0 0 260px;
+    }
+
+    .testimonial-card{
+        min-height:250px;
+        padding:20px;
+    }
+
+    .testimonial-card p{
+        font-size:.9rem;
+    }
+
+    .quote-icon{
+        font-size:5rem;
+    }
+
+    .testimonials-sidebar h3{
+        font-size:1.5rem;
+    }
+
+    .slider-controls{
+        gap:12px;
+    }
+
+    .progress-track{
+        width:100px;
+    }
+
+    .user-info{
+        gap:10px;
+    }
+
+    .user-info h4{
+        font-size:.9rem;
+    }
+
+    .stars{
+        font-size:.85rem;
+    }
+
+}
+/* ==========================
+   Tablets
+========================== */
+
+@media (max-width:992px){
+
+    .map-section{
+        padding:80px 30px;
+    }
+
+    .map-section iframe{
+        height:420px;
+    }
+
+}
+
+
+/* ==========================
+   Phones
+========================== */
+
+@media (max-width:768px){
+
+    .map-section{
+        padding:70px 20px;
+    }
+
+    .map-section h2{
+        margin-bottom:30px;
+    }
+
+    .map-section iframe{
+        height:350px;
+        border-radius:16px;
+    }
+
+}
+
+
+/* ==========================
+   Small Phones
+========================== */
+
+@media (max-width:480px){
+
+    .map-section{
+        padding:60px 15px;
+    }
+
+    .map-section iframe{
+        height:280px;
+        border-radius:14px;
+    }
+
+}
+/* ==========================
+   RESPONSIVE FOOTER
+========================== */
+
+/* Large tablets */
+@media (max-width:1100px){
+
+    .footer{
+        padding:70px 40px 30px;
+    }
+
+    .footer-top{
+        grid-template-columns:repeat(2,1fr);
+        gap:50px;
+    }
+
+}
+
+
+/* Tablets */
+@media (max-width:768px){
+
+    .footer{
+        padding:60px 25px 25px;
+    }
+
+    .footer-top{
+        grid-template-columns:1fr;
+        gap:40px;
+        text-align:center;
+    }
+
+    .brand p{
+        max-width:100%;
+        margin:auto;
+    }
+
+    .col a{
+        margin-bottom:12px;
+    }
+
+    .col p{
+        justify-content:center;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+        margin-top:40px;
+    }
+
+}
+
+
+/* Phones */
+@media (max-width:480px){
+
+    .footer{
+        padding:50px 18px 20px;
+    }
+
+    .brand h2{
+        font-size:24px;
+    }
+
+    .brand p,
+    .col a,
+    .col p{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+    .col h3{
+        font-size:15px;
+        margin-bottom:15px;
+    }
+
+    .footer-bottom{
+        font-size:12px;
+    }
+
+    .footer-bottom p{
+        line-height:1.6;
+    }
+
+}
