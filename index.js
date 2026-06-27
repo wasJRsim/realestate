@@ -50,7 +50,7 @@ function renderProperties(properties) {
 
         card.innerHTML = `
             <div class="plocation">
-                <img src="epingle.png" class="location2">
+                <img src="https://res.cloudinary.com/dshmhktwh/image/upload/v1782559375/epingle_oa6i6g.webp" class="location2">
                 <p class="namelocation">
                     ${property.location || ""}
                 </p>
@@ -60,13 +60,13 @@ function renderProperties(properties) {
             </div>
 
             <div class="icons">
-                <img src="bed-solid.png" class="icon">
+                <img src="https://res.cloudinary.com/dshmhktwh/image/upload/v1782559686/bed-solid_z323n3.webp" class="icon">
                 <span>${property.bedrooms || 0}</span>
 
-                <img src="bath-solid.png" class="icon">
+                <img src="https://res.cloudinary.com/dshmhktwh/image/upload/v1782559932/bath-solid_sicpda.webp" class="icon">
                 <span>${property.bathrooms || 0}</span>
 
-                <img src="surface (1).png" class="icon">
+                <img src="https://res.cloudinary.com/dshmhktwh/image/upload/v1782558602/surface_1_f7zroz.webp" class="icon">
                 <span>${property.surface || 0}m²</span>
             </div>
         `;

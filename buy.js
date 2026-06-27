@@ -120,7 +120,7 @@ function display(list) {
             <div class="property-price">${formatPrice(property.price)}<p>USD</p></div>
             </div>
                 <div class="property-location">
-                <img src="epingle.png" class="location2" style="width:20px; height:20px;">
+                <img src="https://res.cloudinary.com/dshmhktwh/image/upload/v1782559375/epingle_oa6i6g.webp" class="location2" style="width:20px; height:20px;">
                 ${escapeHTML(property.location || "Unknown")}
                 </div>
             <p style="
@@ -136,21 +136,21 @@ function display(list) {
                     ${property.bedrooms !== undefined ? `
                         <span class="meta-item">
                             ${escapeHTML(property.bedrooms)}
-                            <img src="bed-solid.png" class="icon" style="width:20px; height:20px;">
+                            <img src="https://res.cloudinary.com/dshmhktwh/image/upload/v1782559686/bed-solid_z323n3.webp" class="icon" style="width:20px; height:20px;">
                         </span>
                     ` : ""}|
 
                     ${property.bathrooms !== undefined ? `
                         <span class="meta-item">
                             ${escapeHTML(property.bathrooms)}
-                            <img src="bath-solid.png" class="icon" style="width:20px; height:20px;">
+                            <img src="https://res.cloudinary.com/dshmhktwh/image/upload/v1782559932/bath-solid_sicpda.webp" class="icon" style="width:20px; height:20px;">
                         </span>
                     ` : ""}|
 
                     ${property.surface ? `
                         <span class="meta-item">
                             ${escapeHTML(property.surface)}
-                            <img src="surface (1).png" class="icon" style="width:20px; height:20px;">
+                            <img src="https://res.cloudinary.com/dshmhktwh/image/upload/v1782558602/surface_1_f7zroz.webp" class="icon" style="width:20px; height:20px;">
                         </span>
                     ` : ""}
 
@@ -182,7 +182,6 @@ function display(list) {
             <div>
                 <img src="${property.image}" alt="${escapeHTML(property.location || "Property")}" style="width:100%;height:120px;object-fit:cover;">
                 <h3>${escapeHTML(property.location || "")}</h3>
-                <p>${formatPrice(property.price)}</p>
             </div>
         `);
 

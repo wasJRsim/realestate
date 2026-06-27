@@ -106,7 +106,7 @@ function renderProperty() {
                     <div class="feature">
                     <div style="display:flex; align-items:center; gap:6px;">
                         <strong>${property.surface || 0}</strong>
-                        <img src="surface (1).png" class="icon" style="width:35px; height:35px;">
+                        <img src="https://res.cloudinary.com/dshmhktwh/image/upload/v1782558602/surface_1_f7zroz.webp" class="icon" style="width:35px; height:35px;">
                     </div>
                     </div>
 
@@ -114,7 +114,7 @@ function renderProperty() {
                         <div>
                             <div style="display:flex; align-items:center; gap:6px;">
                                 <strong>${property.bedrooms || 0}</strong>
-                                <img src="bed-solid.png" class="icon" style="width:35px; height:35px;">
+                                <img src="https://res.cloudinary.com/dshmhktwh/image/upload/v1782559686/bed-solid_z323n3.webp" class="icon" style="width:35px; height:35px;">
                             </div>
                         </div>
                     </div>
@@ -123,7 +123,7 @@ function renderProperty() {
                         <div>
                             <div style="display:flex; align-items:center; gap:6px;">
                                 <strong>${property.bathrooms || 0}</strong>
-                                <img src="bath-solid.png" class="icon" style="width:35px; height:35px;">
+                                <img src="https://res.cloudinary.com/dshmhktwh/image/upload/v1782559932/bath-solid_sicpda.webp" class="icon" style="width:35px; height:35px;">
                             </div>
                         </div>
                     </div>
@@ -157,9 +157,9 @@ function renderProperty() {
 
                 <h3>Contact Agent</h3>
 
-                <h4><img src="phone-call.png">Phone number</h4>
+                <h4><img src="https://res.cloudinary.com/dshmhktwh/image/upload/v1782558898/phone-call_mtgdtz.webp">Phone number</h4>
                 <p><a href="tel:+213654803725">+213 654 803 725</a></p>
-                <h4><img src="email.png">Email</h4>
+                <h4><img src="https://res.cloudinary.com/dshmhktwh/image/upload/v1782559537/email_pleqmo.webp">Email</h4>
                 <p><a href="mailto:Example@gmail.com">Example@gmail.com</a></p>
             </div>
 
@@ -168,7 +168,7 @@ function renderProperty() {
                 target="_blank"
                 href="https://www.google.com/maps/search/${encodeURIComponent(property.address || property.location || "")}"
             >
-                <img src="epingle.png" class="location2" style="width:20px; height:20px;">
+                <img src="https://res.cloudinary.com/dshmhktwh/image/upload/v1782559375/epingle_oa6i6g.webp" class="location2" style="width:20px; height:20px;">
                 View on Map
             </a>
 

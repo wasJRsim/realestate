@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Screenshot_2026-06-16_152054-removebg-preview.png" type="image/png">
+    <title>Admin Panel</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f4f6f9, #e9eef5);
+            padding: 40px 20px;
+            color: #111;
+        }
+
+        /* TITLE */
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        /* FORM LAYOUT */
+        input {
+            display: block;
+            width: 100%;
+            max-width: 520px;
+            margin: 12px auto;
+            padding: 14px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            outline: none;
+            font-size: 14px;
+            background: white;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        input:focus {
+            border-color: #bd8038;
+            box-shadow: 0 0 0 3px rgba(189, 128, 56, 0.15);
+            transform: translateY(-1px);
+        }
+
+        /* FILE INPUT */
+        input[type="file"] {
+            padding: 12px;
+            background: #fff;
+        }
+
+        /* BUTTON */
+        button {
+            display: block;
+            width: 100%;
+            max-width: 520px;
+            margin: 18px auto;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #bd8038, #e5b769);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 10px 20px rgba(189, 128, 56, 0.2);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(189, 128, 56, 0.25);
+        }
+
+        /* SECTION DIVIDER */
+        hr {
+            max-width: 520px;
+            margin: 30px auto;
+            border: none;
+            height: 1px;
+            background: #e5e7eb;
+        }
+
+        /* PREVIEW GRID */
+        #preview {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+        }
+
+        /* PROPERTY CARD */
+        .property-card,
+        #preview > div {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.25s ease;
+        }
+
+        .property-card:hover,
+        #preview > div:hover {
+            transform: translateY(-6px);
+        }
+
+        /* IMAGE */
+        .property-card img,
+        #preview img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        /* TEXT INSIDE CARD */
+        .property-card h3,
+        #preview h3 {
+            padding: 10px 12px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .property-card p,
+        #preview p {
+            padding: 6px 12px;
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        /* DELETE BUTTON */
+        .delete-btn,
+        .del {
+            padding: 8px 12px;
+            font-size: 13px;
+            background: #ef4444;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+            display: block;
+            margin: 10px auto 14px auto;
+        }
+
+        .delete-btn:hover,
+        .del:hover {
+            background: #dc2626;
+        }
+        select {
+            display: block;
+            width: 100%;
+            max-width: 520px;
+            margin: 12px auto;
+            padding: 14px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            outline: none;
+            font-size: 14px;
+            background: white;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        select:focus {
+            border-color: #bd8038;
+            box-shadow: 0 0 0 3px rgba(189, 128, 56, 0.15);
+            transform: translateY(-1px);
+        }
+        label{
+            display: flex;
+            justify-content: center;
+        }
+        .editor{
+            width:100%;
+            max-width:520px;
+            margin:12px auto;
+        }
+
+        .editor-toolbar{
+            display:flex;
+            gap:10px;
+            margin-bottom:8px;
+        }
+
+        .editor-toolbar button{
+            padding:8px 12px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            background:#1f2937;
+            color:white;
+            font-weight:600;
+            transition:0.2s;
+        }
+
+        .editor-toolbar button:hover{
+            background:#111827;
+            transform:translateY(-2px);
+        }
+
+        #propertydescription{
+            width:100%;
+            min-height:200px;
+            padding:15px;
+            border-radius:12px;
+            border:1px solid #ddd;
+            resize:vertical;
+            font-family:"Inter", sans-serif;
+            font-size:14px;
+            line-height:1.6;
+        }
+        .add-description{
+            padding:10px;
+        }
+        #previewGallery{
+            display:grid;
+            grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
+            gap:12px;
+            margin-top:15px;
+        }
+
+        .gallery-item{
+            position:relative;
+        }
+
+        .gallery-item img{
+            width:100%;
+            height:110px;
+            object-fit:cover;
+            border-radius:12px;
+            border:2px solid #e5e7eb;
+            transition:.3s;
+        }
+
+        .gallery-item img:hover{
+            transform:scale(1.03);
+            border-color:#c9a86a;
+        }
+
+        .remove-gallery{
+            position:absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top:-10px;
+            right:5px;
+            width:28px;
+            height:28px;
+            border:none;
+            border-radius:50%;
+            background:rgba(0,0,0,.75);
+            color:#fff;
+            font-size:18px;
+            cursor:pointer;
+            transition:.2s;
+        }
+
+        .remove-gallery:hover{
+            transform:scale(1.1);
+        }
+        #mainImagePreview{
+            margin-top:15px;
+        }
+
+        #mainImagePreview img{
+            width:220px;
+            height:140px;
+            object-fit:cover;
+            border-radius:12px;
+            border:2px solid #e5e7eb;
+        }
+        /* ===========================
+   TABLETS
+=========================== */
+
+@media (max-width:992px){
+
+    body{
+        padding:30px 20px;
+    }
+
+    h2{
+        font-size:26px;
+        margin-bottom:25px;
+    }
+
+    input,
+    select,
+    button,
+    .editor,
+    hr{
+        max-width:100%;
+    }
+
+    #preview{
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+    #previewGallery{
+        grid-template-columns:repeat(auto-fill,minmax(110px,1fr));
+    }
+
+}
+
+
+/* ===========================
+   PHONES
+=========================== */
+
+@media (max-width:768px){
+
+    body{
+        padding:20px 15px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+
+    input,
+    select{
+        padding:13px 14px;
+        font-size:15px;
+    }
+
+    button{
+        padding:14px;
+        font-size:15px;
+    }
+
+    .editor-toolbar{
+        flex-wrap:wrap;
+        gap:8px;
+    }
+
+    .editor-toolbar button{
+        flex:1;
+        min-width:60px;
+        margin:0;
+    }
+
+    #propertydescription{
+        min-height:180px;
+        font-size:15px;
+    }
+
+    #preview{
+        grid-template-columns:1fr;
+    }
+
+    #previewGallery{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .gallery-item img{
+        height:100px;
+    }
+
+    #mainImagePreview{
+        display:flex;
+        justify-content:center;
+    }
+
+    #mainImagePreview img{
+        width:100%;
+        max-width:320px;
+        height:200px;
+    }
+
+}
+
+
+/* ===========================
+   SMALL PHONES
+=========================== */
+
+@media (max-width:480px){
+
+    body{
+        padding:15px 12px;
+    }
+
+    h2{
+        font-size:22px;
+    }
+
+    input,
+    select,
+    button{
+        font-size:14px;
+    }
+
+    label{
+        justify-content:flex-start;
+        font-size:14px;
+        margin-bottom:5px;
+    }
+
+    .editor-toolbar{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .editor-toolbar button{
+        width:100%;
+    }
+
+    #propertydescription{
+        min-height:160px;
+        padding:12px;
+    }
+
+    #previewGallery{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
+
+    .gallery-item img{
+        height:90px;
+    }
+
+    #mainImagePreview img{
+        height:180px;
+    }
+
+    .remove-gallery{
+        width:24px;
+        height:24px;
+        font-size:15px;
+    }
+
+}
+    </style>
+</head>
+<body>
+    <h2>Add Property</h2>
+<label for="mainImage">Main Image</label>
+<input type="file" id="mainImage" accept="image/*">
+<div id="mainImagePreview"></div>
+
+<label for="additionalImages">Additional Images</label>
+<input type="file" id="additionalImages" accept="image/*" multiple>
+<div id="previewGallery"></div>
+
+<input type="text" id="titleofproperty" placeholder="Title of Property">
+
+<input type="text" id="location" placeholder="Location">
+
+<input type="text" id="price" placeholder="Price">
+
+<input type="number" id="bedrooms" placeholder="Bedrooms">
+
+<input type="number" id="bathrooms" placeholder="Bathrooms">
+
+<input type="number" id="surface" placeholder="Surface">
+
+<input type="text" id="address" placeholder="Property Address">
+
+<div class="editor">
+    <p class="add-description">• Add descrption</p>
+<div class="editor-toolbar">
+    <button type="button" onclick="formatText('bold')"><b>B</b></button>
+    <button type="button" onclick="formatText('italic')"><i>I</i></button>
+    <button type="button" onclick="formatText('highlight')">C</button>
+</div>
+<div id="propertydescription"
+    contenteditable="true">
+</div>
+
+</div>
+
+<select id="propertytype">
+    <option value="">Select Property Type</option>
+    <option value="Buy">For Sale</option>
+    <option value="Rent">For Rent</option>
+</select>
+
+<select id="category">
+    <option value="">Property Category</option>
+
+    <option value="Apartment">
+        Apartment
+    </option>
+
+    <option value="House">
+        House
+    </option>
+
+    <option value="Building">
+        Building
+    </option>
+
+    <option value="Duplex">
+        Duplex
+    </option>
+
+    <option value="Triplex">
+        Triplex
+    </option>
+
+    <option value="Studio">
+        Studio
+    </option>
+</select>
+
+
+
+
+
+<button id="addBtn">Add Property</button>
+
+<hr>
+<div id="preview"></div>
+<script type="module" src="app.js">
+</script>
+</body>
+</html>

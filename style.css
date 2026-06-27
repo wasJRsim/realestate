@@ -148,6 +148,7 @@ html{
     color: #7CFF9A;
     font-family: "Imperial Script",sans-serif;
     font-size: 66px;
+    font-weight: 800;
 }
 
 .left p {
@@ -206,7 +207,7 @@ html{
 /* RIGHT SIDE */
 .right {
     flex: 1;
-    background: url("https://res.cloudinary.com/dshmhktwh/image/upload/v1782511012/67d5b3611e424_1_dakelm.jpg")
+    background: url("https://res.cloudinary.com/dshmhktwh/image/upload/v1782557920/67d5b3611e424_1_pblygq.webp")
         center/cover no-repeat;
 
     position: relative;

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login System</title>
+    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Inter",sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0B3C26 0%,
+        #164B36 50%,
+        #1F5A42 100%
+    );
+}
+
+.login-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-card{
+    width:100%;
+    max-width:420px;
+
+    background:white;
+    padding:45px 35px;
+
+    border-radius:22px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.15);
+
+    text-align:center;
+}
+
+.logo{
+    width:70px;
+    height:70px;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    background:#0B3C26;
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:30px;
+}
+
+.login-card h1{
+    font-size:2rem;
+    color:#111827;
+    margin-bottom:8px;
+}
+
+.login-card p{
+    color:#6b7280;
+    margin-bottom:30px;
+    font-size:15px;
+}
+
+.login-card input{
+    width:100%;
+    padding:15px 18px;
+
+    margin-bottom:18px;
+
+    border:1px solid #dcdcdc;
+    border-radius:12px;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+.login-card input:focus{
+    outline:none;
+    border-color:#0B3C26;
+    box-shadow:0 0 0 4px rgba(11,60,38,.15);
+}
+
+#loginBtn{
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+    border-radius:12px;
+
+    background:#0B3C26;
+    color:white;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+#loginBtn:hover{
+    background:#0a2f1f;
+    transform:translateY(-2px);
+}
+
+#loginBtn:active{
+    transform:translateY(0);
+}
+
+/* Tablet */
+
+@media (max-width:768px){
+
+    .login-card{
+        padding:40px 28px;
+    }
+
+    .login-card h1{
+        font-size:1.8rem;
+    }
+
+}
+
+/* Phone */
+
+@media (max-width:480px){
+
+    body{
+        padding:15px;
+    }
+
+    .login-card{
+        padding:30px 22px;
+        border-radius:18px;
+    }
+
+    .logo{
+        width:60px;
+        height:60px;
+        font-size:26px;
+    }
+
+    .login-card h1{
+        font-size:1.6rem;
+    }
+
+    .login-card p{
+        font-size:14px;
+    }
+
+    .login-card input,
+    #loginBtn{
+        padding:14px;
+    }
+
+}
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+
+    <div class="login-card">
+
+        <div class="logo">🏠</div>
+
+        <h1>Welcome Back</h1>
+
+        <p>Sign in to manage your properties.</p>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Email Address"
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Password"
+        >
+
+        <button id="loginBtn">
+            Login
+        </button>
+
+    </div>
+
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } 
+from "https://www.gstatic.com/firebasejs/12.14.0/firebase-auth.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBIM45Fatl1g-DrFyEhAfQr_ZHrY8QeCEs",
+    authDomain: "mehdi-immobilier.firebaseapp.com",
+    projectId: "mehdi-immobilier",
+    storageBucket: "mehdi-immobilier.firebasestorage.app",
+    messagingSenderId: "304433272697",
+    appId: "1:304433272697:web:492a77506792d2ee22c1a8",
+    measurementId: "G-WK70H0Y64T"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+const loginBtn = document.getElementById("loginBtn");
+
+loginBtn.addEventListener("click", async () => {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    try {
+        await signInWithEmailAndPassword(auth, email, password);
+        alert("Login successful!");
+        window.location.href = "admin.html";
+    } catch (error) {
+        alert(error.message);
+    }
+});
+loginBtn.addEventListener("click", async () => {
+
+    loginBtn.textContent = "Logging in...";
+    loginBtn.disabled = true;
+
+    try {
+
+        await signInWithEmailAndPassword(auth, email.value, password.value);
+
+        window.location.href = "admin.html";
+
+    } catch(error) {
+
+        alert(error.message);
+
+        loginBtn.textContent = "Login";
+        loginBtn.disabled = false;
+    }
+});
+</script>
+
+</body>
+</html>
